@@ -79,7 +79,7 @@ public class Numerosrandom {
             PrintWriter pw = null;
         try
         {
-            fichero = new FileWriter("fichero2.txt");
+            fichero = new FileWriter("fichero2.txt");  //Se puede modificar el mismo archivo solo con cambiar el nombre
             pw = new PrintWriter(fichero);
  
             for (int i = 0; i <= 200; i++)

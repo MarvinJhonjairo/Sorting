@@ -17,44 +17,24 @@ import java.io.IOException;
 
 import java.io.*;       // para escribir archivo de texto
 
-
-/**
- *
- * @author Casa
- */
 public class Sorting {
 
     public static void main(String[] args) {
-        // TODO code application logic here
-       // si el .txt existe se debe agregar : FileWriter fichero = new FileWriter("fichero.txt",true);
-          FileWriter fichero = null;
-          Random rnd = new Random();
-        PrintWriter pw = null;
-        try
-        {
-            fichero = new FileWriter("fichero.txt");
-            pw = new PrintWriter(fichero);
- 
-            for (int i = 0; i <= 200; i++)
-                pw.println("Random " + i+": "+rnd.nextInt(10000));
- 
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-           try {
-           // Nuevamente aprovechamos el finally para
-           // asegurarnos que se cierra el fichero.
-           if (null != fichero)
-              fichero.close();
-           } catch (Exception e2) {
-              e2.printStackTrace();
-           }
-        }             
-                
+
+        Numerosrandom nuevo = new Numerosrandom();
+        nuevo.ficherorandom();
         
-    }
-      
+        String arreglo[] = nuevo.lecturafichero();
         
+        Mergesort orden = new Mergesort();
+        String arreglo2[] =orden.lista(arreglo);
+        
+        nuevo.escribirfichero(arreglo2);
+        
+    }//fin del main
     
+}//fin de la clase
+
     
-}
+  
+    
